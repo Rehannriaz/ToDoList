@@ -1,0 +1,80 @@
+.container {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    max-width: 500px;
+    width: 40rem;
+    padding: 3rem;
+    background-color: #1d222b;
+    color: #cfcfcf;
+    border-radius: 10px;
+    box-shadow: 5px 10px #c6bcbc;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: xx-large;
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+}
+
+label {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+}
+
+input[type="date"] {
+    width: 30%;
+    height: 36px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: large;
+}
+
+
+button[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: rgb(243, 99, 32);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(173, 72, 25);
+}
+
+form a {
+    text-decoration: none;
+    color: rgb(0, 102, 255);
+}
+
+form a:hover {
+    color: white;
+}
