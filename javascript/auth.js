@@ -23,6 +23,7 @@ validateAuth(auth) {
   loginPage.style.display = "block";
   signupPage.style.display = "block";
     localStorage.removeItem("auth");
+    localStorage.removeItem("userIsLoggedIn")
     window.location.replace("/");
   }
 }

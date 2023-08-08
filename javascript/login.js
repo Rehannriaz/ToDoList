@@ -10,6 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const password = passwordInput.value;
 
         let userData = JSON.parse(localStorage.getItem('userData')) || [];
+        let userIsLoggedIn = JSON.parse(localStorage.getItem('userIsLoggedIn')) || [];
+        
+        userIsLoggedIn.push({ email: email, password: password});
+        localStorage.setItem("userIsLoggedIn", JSON.stringify(userIsLoggedIn));
 
         // Find matching entry
         const matchingEntry = userData.find(entry => entry.email === email && entry.password === password);
@@ -21,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
  
         } else {
             console.log('Email or password is incorrect');
-            errorMessage.innerText='Login failed: Email or password is incorrect';
+            errorMessage.innerText='Email or password is incorrect';
         }
     });
 });
