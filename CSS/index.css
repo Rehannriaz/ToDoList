@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-form {
+.todo-container {
     max-width: 500px;
     width: 40rem;
     padding: 3rem;
@@ -78,3 +78,29 @@ form a {
 form a:hover {
     color: white;
 }
+
+
+/* Styling for the todo list */
+#todo-list {
+    margin-top: 20px;
+  }
+  
+  /* Styling for individual posts */
+  #todo-list li {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    color: black;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Hover effect for posts */
+  #todo-list li:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
