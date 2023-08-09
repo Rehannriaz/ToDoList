@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/CSS/global.css">
+    <link rel="stylesheet" href="/CSS/index.css">
+    <script defer src="/javascript/auth.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/pages/index.html">Home</a></li>
+            <li id="login-page"><a href="/pages/login.html">Login</a></li>
+            <li id="signup-page"><a href="/pages/signup.html">Signup</a></li>
+            <p class="text-center"><a href="./login.html" class="logout">Log Out</a></p>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="todo-container">
+            <form action="./index.html" id="todo-form">
+                <h1>
+                    To Do List
+                </h1>
+                <div class="form-group">
+                    <input type="text" id="todo" placeholder="Enter a to do...">
+                </div>
+
+                <button type="submit"> Save </button>
+            </form>
+            <div id="todo-list"></div>
+        </div>
+    </div>
+    <div class="other-container">
+        <h3>See what others have posted in their to-do list...</h3> 
+        <div id="other-list" class="other-list">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

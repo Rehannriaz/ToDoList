@@ -21,7 +21,7 @@ loginForm.addEventListener("submit", function (event) {
     console.log("Login successful:", matchingEntry);
     errorMessage.innerText = "Login Successful";
     localStorage.setItem("auth", 1);
-    window.location.href = "/pages/index.html";
+    window.location.href = "/index.html";
   } else {
     console.log("Email or password is incorrect");
     errorMessage.innerText = "Email or password is incorrect";

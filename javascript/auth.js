@@ -7,7 +7,7 @@ class Auth {
 
   validateAuth(auth) {
     if (auth != 1) {
-      window.location.replace("/pages/login.html");
+      window.location.replace("login.html");
     } else {
       document.querySelector("body").style.display = "block";
       let loginPage = document.getElementById("login-page");
