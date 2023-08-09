@@ -13,7 +13,7 @@ loginForm.addEventListener("submit", function (event) {
 
   // Find matching entry
   const matchingEntry = userData.find(
-    (entry) => entry.email === email && entry.password === password
+    (entry) => entry.email === email && entry.password === md5(password)
   );
   if (matchingEntry) {
     let userIsLoggedIn = { username: matchingEntry.username};

@@ -1,3 +1,5 @@
+  // import md5 from "./hash";
+
 // Get form elements
 const signupForm = document.getElementById("signup-form");
 const emailInput = document.getElementById("email");
@@ -10,12 +12,12 @@ signupForm.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent actual form submission
   // Get email and password values
   const email = emailInput.value;
-  const password = passwordInput.value;
+  const password = md5(passwordInput.value);
   const username = usernameInput.value;
-
+  
   let userData = JSON.parse(localStorage.getItem("userData")) || [];
 
-  const isDuplicate = userData.some((entry) => entry.email === email);
+  const isDuplicate = userData.some((entry) => entry.email === email || entry.username===username);
   if (isDuplicate) {
     console.log("Duplicate email found. Entry not added.");
     errorMessage.innerText = "Duplicate email found. Please use another email.";

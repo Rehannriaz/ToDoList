@@ -38,7 +38,8 @@ const todoForm = document.getElementById("todo-form");
 const todo = document.getElementById("todo");
 const currentUser = localStorage.getItem("userIsLoggedIn");
 const currentUsername = JSON.parse(currentUser).username;
-
+const loggedInTag=document.getElementById("Person");
+loggedInTag.innerHTML = `<h3> Welcome ${currentUsername}</h3>`;
 todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const todoValue = todo.value;
@@ -105,6 +106,8 @@ if (allTodo) {
 
   todoList.innerHTML = postHTML;
   otherList.innerHTML =postOtherHTML;
+
+
 } else {
   console.error("user not logged in");
 }
