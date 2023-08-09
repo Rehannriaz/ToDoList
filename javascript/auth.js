@@ -46,25 +46,79 @@ todoForm.addEventListener("submit", function (event) {
   const currentUsername = JSON.parse(currentUser).username;
   console.log("Current user = " + currentUsername);
 
-  todoVal.push({ post: todoValue, username: currentUsername });
+  todoVal.push({
+    post: todoValue,
+    username: currentUsername,
+    completed: false,
+  });
   localStorage.setItem("todoVal", JSON.stringify(todoVal));
   todoForm.submit();
 });
 
 const todoList = document.getElementById("todo-list");
 const allTodo = JSON.parse(localStorage.getItem("todoVal"));
-let currentUserPost = [];
+let allUserPost = [];
 
 if (allTodo) {
+  allUserPost = allTodo.slice();
+
   const currentUsername = JSON.parse(
     localStorage.getItem("userIsLoggedIn")
   ).username;
 
   currentUserPost = allTodo.filter((post) => post.username === currentUsername);
+
   const postHTML = currentUserPost
-    .map((post) => `<li>${post.post}</li>`)
+    .map(
+      (post, index) => `
+    <div class="post">
+      <span class="post-text ${post.completed ? "completed" : ""}">${
+        post.post
+      }</span>
+      <button class="delete-button" data-index="${index}">Delete</button>
+      <button class="tick-button" data-index="${index}">✓</button>
+    </div>
+    `
+    )
     .join("");
+
   todoList.innerHTML = postHTML;
 } else {
   console.error("user not logged in");
+}
+
+todoList.addEventListener("click", function (event) {
+  const target = event.target;
+
+  if (target.classList.contains("delete-button")) {
+    const index = target.getAttribute("data-index");
+    currentUserPost.splice(index, 1);
+    localStorage.setItem("todoVal", JSON.stringify(currentUserPost));
+    updateTodoList();
+  } else if (target.classList.contains("tick-button")) {
+    const index = target.getAttribute("data-index");
+    console.log("index " + index + " pressed");
+    currentUserPost[index].completed = !currentUserPost[index].completed;
+    console.log(currentUserPost[index].completed);
+    localStorage.setItem("todoVal", JSON.stringify(currentUserPost));
+    location.reload(); // reload page
+  }
+});
+
+function updateTodoList() {
+  const postHTML = currentUserPost
+    .map(
+      (post, index) => `
+      <div class="post">
+      <span class="post-text ${post.completed ? "completed" : ""}">${
+        post.post
+      }</span>
+      <button class="delete-button" data-index="${index}">Delete</button>
+      <button class="tick-button" data-index=${index}">✓</button>
+      </div>
+      `
+    )
+    .join("");
+
+  todoList.innerHTML = postHTML;
 }
