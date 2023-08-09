@@ -47,7 +47,6 @@ todoForm.addEventListener("submit", function (event) {
     return;
   }
   let todoVal = JSON.parse(localStorage.getItem("todoVal")) || [];
-  console.log("Current user = " + currentUsername);
 
   todoVal.push({
     post: todoValue,
@@ -72,21 +71,24 @@ if (allTodo) {
   ).username;
 
   currentUserPost = allTodo.filter((post) => post.username === currentUsername);
-
   const postHTML = allUserPost
-    .filter((post) => post.username === currentUsername)
-    .map(
-      (post, index) => `
-    <div class="post">
-    <button class="tick-button" data-index="${index}">✓</button>
-      <span class="post-text ${post.completed ? "completed" : ""}">${
-        post.post
-      }</span>
-      <button class="delete-button" data-index="${index}">Delete</button>
-    </div>
-    `
-    )
-    .join("");
+  .map(
+    (post, index) => {
+      if (post.username === currentUsername) {
+        return `
+          <div class="post">
+            <button class="tick-button" data-index="${index}">✓</button>
+            <span class="post-text ${post.completed ? "completed" : ""}">${post.post}</span>
+            <button class="delete-button" data-index="${index}">Delete</button>
+          </div>
+        `;
+      } else {
+        return ''; 
+      }
+    }
+  )
+  .join("");
+
 
   const postOtherHTML = allUserPost
     .filter((post) => post.username != currentUsername)
@@ -117,9 +119,7 @@ todoList.addEventListener("click", function (event) {
     updateTodoList();
   } else if (target.classList.contains("tick-button")) {
     const index = target.getAttribute("data-index");
-    console.log("index " + index + " pressed");
     allUserPost[index].completed = !allUserPost[index].completed;
-    console.log(allUserPost[index].completed);
     localStorage.setItem("todoVal", JSON.stringify(allUserPost));
     location.reload(); // reload page
   }
