@@ -28,5 +28,4 @@ signupForm.addEventListener("submit", function (event) {
 
   signupForm.submit();
 
-  signupForm.reset();
 });
