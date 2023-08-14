@@ -3,24 +3,10 @@
 * {
     font-family: 'Ubuntu', sans-serif;
     font-family: 'Montserrat', sans-serif;
-}
-
-body {
-    /* background-image: url("/images/bg.jpg"); */
-    background-size: cover;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Style the navigation bar */
 nav {
     background-color: #1d222b;
     padding: 1rem;
@@ -38,7 +24,6 @@ li {
     margin: 0 1rem;
 }
 
-/* Style the links */
 a {
     text-decoration: none;
     color: #fff;
@@ -48,16 +33,4 @@ a {
 
 a:hover {
     color: #f36320;
-}
-
-/* Add some responsive adjustments */
-@media (max-width: 768px) {
-    ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    li {
-        margin: 0.5rem 0;
-    }
 }

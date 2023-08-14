@@ -9,18 +9,15 @@ loginForm.addEventListener("submit", function (event) {
   const password = passwordInput.value;
 
   let userData = JSON.parse(localStorage.getItem("userData")) || [];
-  //   let userIsLoggedIn = JSON.parse(localStorage.getItem("userIsLoggedIn")) || [];
-
-  // Find matching entry
   const matchingEntry = userData.find(
     (entry) => entry.email === email && entry.password === md5(password)
   );
   if (matchingEntry) {
     let userIsLoggedIn = { username: matchingEntry.username};
     localStorage.setItem("userIsLoggedIn", JSON.stringify(userIsLoggedIn));
-    console.log("Login successful:", matchingEntry);
+    
+    // console.log("Login successful:", matchingEntry);
     errorMessage.innerText = "Login Successful";
-    localStorage.setItem("auth", 1);
     window.location.href = "index.html";
   } else {
     console.log("Email or password is incorrect");
