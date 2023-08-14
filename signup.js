@@ -8,7 +8,7 @@ signupForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
   const email = emailInput.value;
-  const password = md5(passwordInput.value);
+  const password = hashFunc(passwordInput.value);
   const username = usernameInput.value;
 
   let userData = JSON.parse(localStorage.getItem("userData")) || [];

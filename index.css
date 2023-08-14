@@ -34,17 +34,13 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-select {
+input[type="text"] {
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
 }
-
-
-
 
 button[type="submit"] {
     display: block;
@@ -64,12 +60,10 @@ button[type="submit"]:hover {
 }
 
 
-/* Styling for the todo list */
 #todo-list {
     margin-top: 20px;
 }
 
-/* Styling for individual posts */
 #todo-list span {
     background-color: #f7f7f7;
     border: 1px solid #ccc;
@@ -84,16 +78,14 @@ button[type="submit"]:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover effect for posts */
 #todo-list span:hover {
     background-color: #6f6767;
-    color:white;
+    color: white;
     border: none;
     transition: background-color 0.3s ease-in-out;
 }
 
 
-/* Styling for delete button */
 .delete-button {
     background-color: #f44336;
     color: white;
@@ -110,11 +102,9 @@ button[type="submit"]:hover {
 }
 
 
-/* Styling for completed posts */
 .completed {
     text-decoration: line-through;
     color: #888;
-    /* You can adjust the color as needed */
 }
 
 .other-container {
@@ -127,6 +117,7 @@ button[type="submit"]:hover {
     flex-direction: column;
     justify-content: center;
 }
+
 .other-list li {
     list-style-type: none;
     background-color: #f7f7f7;
@@ -138,14 +129,16 @@ button[type="submit"]:hover {
     font-size: 16px;
     list-style: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border:none;
+    border: none;
 }
-.other-list li:hover{
-    border:none;
+
+.other-list li:hover {
+    border: none;
     background-color: #4b4646;
-    color:white;
+    color: white;
     transition: background-color 0.3s ease-in-out;
 }
+
 .other-list {
     display: flex;
     flex-direction: column;
@@ -161,7 +154,7 @@ button[type="submit"]:hover {
     color: #cfcfcf;
     border-radius: 10px;
     box-shadow: 5px 10px #c6bcbc;
-}   
+}
 
 .post {
     display: flex;
@@ -175,6 +168,7 @@ button[type="submit"]:hover {
     border-radius: 50px;
 
 }
-.delete-button{
+
+.delete-button {
     border-radius: 50px;
 }

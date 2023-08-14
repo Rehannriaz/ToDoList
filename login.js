@@ -10,12 +10,12 @@ loginForm.addEventListener("submit", function (event) {
 
   let userData = JSON.parse(localStorage.getItem("userData")) || [];
   const matchingEntry = userData.find(
-    (entry) => entry.email === email && entry.password === md5(password)
+    (entry) => entry.email === email && entry.password === hashFunc(password)
   );
   if (matchingEntry) {
-    let userIsLoggedIn = { username: matchingEntry.username};
+    let userIsLoggedIn = { username: matchingEntry.username };
     localStorage.setItem("userIsLoggedIn", JSON.stringify(userIsLoggedIn));
-    
+
     // console.log("Login successful:", matchingEntry);
     errorMessage.innerText = "Login Successful";
     window.location.href = "index.html";

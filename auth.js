@@ -60,6 +60,7 @@ const allTodo = JSON.parse(localStorage.getItem("todoVal"));
 let allUserPost = allTodo;
 
 if (allTodo) {
+
   const currentUsername = JSON.parse(
     localStorage.getItem("userIsLoggedIn")
   ).username;
