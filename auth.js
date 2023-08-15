@@ -60,7 +60,6 @@ const allTodo = JSON.parse(localStorage.getItem("todoVal"));
 let allUserPost = allTodo;
 
 if (allTodo) {
-
   const currentUsername = JSON.parse(
     localStorage.getItem("userIsLoggedIn")
   ).username;
@@ -84,6 +83,19 @@ if (allTodo) {
     })
     .join("");
 
+  // const postOtherHTML = allUserPost
+  //   .map((post) => {
+  //     if (post.username != currentUsername) {
+  //       `
+  //       <div class="post">
+  //       <li class="post-text ${post.completed ? "completed" : ""}">${
+  //         post.post
+  //       }</li>
+  //       </div>
+  //       `;
+  //     }
+  //   })
+  //   .join("");
   const postOtherHTML = allUserPost
     .filter((post) => post.username != currentUsername)
     .map(

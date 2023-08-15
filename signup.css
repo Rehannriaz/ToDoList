@@ -34,7 +34,6 @@ label {
 }
 
 input[type="text"],
-/** USERNAME **/
 input[type="email"],
 input[type="password"] {
     width: 100%;
