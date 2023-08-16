@@ -9,7 +9,6 @@
 // }
 
 // const Hashes = require("jshashes");
-
 function hashFunc(input){
   var MD5 = new Hashes.MD5().hex(input)
   return MD5;

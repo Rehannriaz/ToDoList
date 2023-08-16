@@ -60,9 +60,7 @@ const allTodo = JSON.parse(localStorage.getItem("todoVal"));
 let allUserPost = allTodo;
 
 if (allTodo) {
-  const currentUsername = JSON.parse(
-    localStorage.getItem("userIsLoggedIn")
-  ).username;
+  const currentUsername = JSON.parse(localStorage.getItem("userIsLoggedIn")).username;
 
   // currentUserPost = allTodo.filter((post) => post.username === currentUsername);
   const postHTML = allUserPost
